@@ -1,0 +1,701 @@
+<!doctype html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Базові елементи інтерфейсу користувача (UI Elements)</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="header">
+      <div class="container">
+        <h1>Базові елементи інтерфейсу користувача (UI Elements)</h1>
+        <p class="subtitle">
+          Огляд 10 ключових компонентів веб-інтерфейсу, їх призначення,
+          особливості та інтерактивні приклади використання.
+        </p>
+
+        <nav class="quick-nav">
+          <span class="nav-title">Швидкий перехід:</span>
+          <div class="nav-links">
+            <a href="#radio">1. Radiobutton</a>
+            <a href="#checkbox">2. Checkbox</a>
+            <a href="#text-input">3. Text input</a>
+            <a href="#tabs">4. Tabs</a>
+            <a href="#button">5. Button</a>
+            <a href="#label">6. Text label</a>
+            <a href="#link">7. Link</a>
+            <a href="#tooltip">8. Tooltip</a>
+            <a href="#dropdown">9. Dropdown list</a>
+            <a href="#datagrid">10. Data grid</a>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <main class="container">
+      <div class="elements-grid">
+        <section id="radio" class="card">
+          <div class="card-header">
+            <span class="badge">01</span>
+            <h2>Radiobutton (Радіокнопка / Перемикач)</h2>
+          </div>
+          <div class="card-body">
+            <div class="explanation">
+              <h3>Призначення:</h3>
+              <p>
+                Радіокнопка дозволяє користувачеві вибрати
+                <strong
+                  >рівно один варіант із набору взаємовиключних опцій</strong
+                >. Коли вибирається одна радіокнопка, будь-яка інша кнопка в тій
+                самій групі автоматично стає невибраною.
+              </p>
+              <ul>
+                <li>
+                  <strong>Коли використовувати:</strong> коли є від 2 до 5-7
+                  взаємовиключних варіантів (наприклад: вибір статі, способу
+                  доставки, платіжної системи).
+                </li>
+                <li>
+                  <strong>Особливість:</strong> усі радіокнопки в одній логічній
+                  групі повинні мати однаковий атрибут <code>name</code>.
+                </li>
+              </ul>
+            </div>
+            <div class="demo-box">
+              <span class="demo-label">Приклад:</span>
+              <fieldset class="demo-fieldset">
+                <legend>Оберіть спосіб доставки:</legend>
+                <div class="input-group">
+                  <input
+                    type="radio"
+                    id="delivery-courier"
+                    name="delivery"
+                    value="courier"
+                    checked
+                  />
+                  <label for="delivery-courier"
+                    >Кур'єрська доставка (1–2 дні)</label
+                  >
+                </div>
+                <div class="input-group">
+                  <input
+                    type="radio"
+                    id="delivery-post"
+                    name="delivery"
+                    value="post"
+                  />
+                  <label for="delivery-post"
+                    >Самовивіз з поштового відділення</label
+                  >
+                </div>
+                <div class="input-group">
+                  <input
+                    type="radio"
+                    id="delivery-pickup"
+                    name="delivery"
+                    value="pickup"
+                  />
+                  <label for="delivery-pickup"
+                    >Самовивіз із магазину (безкоштовно)</label
+                  >
+                </div>
+              </fieldset>
+            </div>
+          </div>
+        </section>
+
+        <section id="checkbox" class="card">
+          <div class="card-header">
+            <span class="badge">02</span>
+            <h2>Checkbox (Прапорець)</h2>
+          </div>
+          <div class="card-body">
+            <div class="explanation">
+              <h3>Призначення:</h3>
+              <p>
+                Прапорець призначений для вибору
+                <strong>одного, декількох або жодного значення</strong> зі
+                списку незалежних опцій, а також для перемикання бінарного стану
+                (увімкнено / вимкнено, так / ні).
+              </p>
+              <ul>
+                <li>
+                  <strong>Коли використовувати:</strong> для множинного вибору
+                  (фільтри товарів, теги) або підтвердження згоди з правилами.
+                </li>
+                <li>
+                  <strong>Особливість:</strong> на відміну від радіокнопок,
+                  вибір одного чекбоксу жодним чином не впливає на стан інших.
+                </li>
+              </ul>
+            </div>
+            <div class="demo-box">
+              <span class="demo-label">Приклад:</span>
+              <div class="demo-form">
+                <div class="input-group">
+                  <input
+                    type="checkbox"
+                    id="feature-analytics"
+                    name="features"
+                    value="analytics"
+                    checked
+                  />
+                  <label for="feature-analytics"
+                    >Модуль аналітики та звітів</label
+                  >
+                </div>
+                <div class="input-group">
+                  <input
+                    type="checkbox"
+                    id="feature-notifications"
+                    name="features"
+                    value="notifications"
+                    checked
+                  />
+                  <label for="feature-notifications"
+                    >SMS та Email сповіщення</label
+                  >
+                </div>
+                <div class="input-group">
+                  <input
+                    type="checkbox"
+                    id="feature-backup"
+                    name="features"
+                    value="backup"
+                  />
+                  <label for="feature-backup"
+                    >Щоденне резервне копіювання</label
+                  >
+                </div>
+                <div class="input-group agreement">
+                  <input
+                    type="checkbox"
+                    id="agree-terms"
+                    name="agree"
+                    required
+                  />
+                  <label for="agree-terms"
+                    ><strong
+                      >Я погоджуюся з умовами надання послуг</strong
+                    ></label
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="text-input" class="card">
+          <div class="card-header">
+            <span class="badge">03</span>
+            <h2>Text input (Текстове поле введення)</h2>
+          </div>
+          <div class="card-body">
+            <div class="explanation">
+              <h3>Призначення:</h3>
+              <p>
+                Однорядкове поле введення, яке дозволяє користувачеві ввести
+                <strong>довільний або структурований текст</strong>
+                за допомогою клавіатури.
+              </p>
+              <ul>
+                <li>
+                  <strong>Коли використовувати:</strong> введення імені, логіна,
+                  адреси електронної пошти, пароля, номера телефону, пошукових
+                  запитів.
+                </li>
+                <li>
+                  <strong>Особливість:</strong> атрибут
+                  <code>type</code> (наприклад: <code>text</code>,
+                  <code>email</code>, <code>password</code>) визначає тип даних,
+                  а <code>placeholder</code> слугує короткою текстовою
+                  підказкою.
+                </li>
+              </ul>
+            </div>
+            <div class="demo-box">
+              <span class="demo-label">Приклад:</span>
+              <div class="demo-form-vertical">
+                <div class="form-field">
+                  <label for="user-fullname">Повне ім'я:</label>
+                  <input
+                    type="text"
+                    id="user-fullname"
+                    class="text-field"
+                    placeholder="Наприклад: Олексій Шевченко"
+                  />
+                </div>
+                <div class="form-field">
+                  <label for="user-email">Електронна пошта:</label>
+                  <input
+                    type="email"
+                    id="user-email"
+                    class="text-field"
+                    placeholder="name@domain.com"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="tabs" class="card">
+          <div class="card-header">
+            <span class="badge">04</span>
+            <h2>Tabs (Вкладки)</h2>
+          </div>
+          <div class="card-body">
+            <div class="explanation">
+              <h3>Призначення:</h3>
+              <p>
+                Вкладки слугують для
+                <strong>компактної організації та структурування вмісту</strong>
+                на сторінці. Вони дозволяють перемикатися між різними розділами
+                або категоріями інформації в межах однієї площини без
+                перезавантаження сторінки.
+              </p>
+              <ul>
+                <li>
+                  <strong>Коли використовувати:</strong> картки товарів (Опис /
+                  Характеристики / Відгуки), панелі налаштувань, перегляд
+                  коду/результату.
+                </li>
+                <li>
+                  <strong>Особливість:</strong> лише один блок вмісту активний і
+                  видимий одночасно, інші тимчасово приховуються.
+                </li>
+              </ul>
+            </div>
+            <div class="demo-box">
+              <span class="demo-label">Приклад:</span>
+              <div class="tabs-component">
+                <div class="tab-buttons" role="tablist">
+                  <button
+                    type="button"
+                    class="tab-btn active"
+                    data-tab="tab-overview"
+                  >
+                    Загальне
+                  </button>
+                  <button type="button" class="tab-btn" data-tab="tab-specs">
+                    Характеристики
+                  </button>
+                  <button type="button" class="tab-btn" data-tab="tab-contacts">
+                    Контакти
+                  </button>
+                </div>
+                <div class="tab-contents">
+                  <div
+                    id="tab-overview"
+                    class="tab-pane active"
+                    role="tabpanel"
+                  >
+                    <h4>Огляд продукту</h4>
+                    <p>
+                      Це компактний розділ, де відображається загальна
+                      інформація про обраний компонент або систему.
+                    </p>
+                  </div>
+                  <div id="tab-specs" class="tab-pane" role="tabpanel">
+                    <h4>Технічні характеристики</h4>
+                    <p>
+                      Формат: HTML5 / CSS3; Адаптивність: Flexbox &amp; CSS
+                      Grid; Підтримка: усі сучасні браузери.
+                    </p>
+                  </div>
+                  <div id="tab-contacts" class="tab-pane" role="tabpanel">
+                    <h4>Контактна інформація</h4>
+                    <p>
+                      Служба підтримки працює цілодобово. Email:
+                      support@example.com, Тел: +380 44 123-45-67.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="button" class="card">
+          <div class="card-header">
+            <span class="badge">05</span>
+            <h2>Button (Кнопка)</h2>
+          </div>
+          <div class="card-body">
+            <div class="explanation">
+              <h3>Призначення:</h3>
+              <p>
+                Кнопка — це базовий інтерактивний елемент керування, який
+                <strong>ініціює негайну дію</strong> при натисканні (відправка
+                форми, відкриття діалогового вікна, збереження змін, скидання
+                даних тощо).
+              </p>
+              <ul>
+                <li>
+                  <strong>Коли використовувати:</strong> для виклику будь-якої
+                  активної дії на веб-сторінці.
+                </li>
+                <li>
+                  <strong>Особливість:</strong> за стилем кнопки зазвичай
+                  поділяють на Primary (основна дія), Secondary (другорядна) та
+                  Danger (деструктивна дія), а також передбачають візуальні
+                  стани hover, active та disabled.
+                </li>
+              </ul>
+            </div>
+            <div class="demo-box">
+              <span class="demo-label">Приклад:</span>
+              <div class="buttons-demo">
+                <button type="button" class="btn btn-primary">
+                  Зберегти (Primary)
+                </button>
+                <button type="button" class="btn btn-secondary">
+                  Скасувати (Secondary)
+                </button>
+                <button type="button" class="btn btn-danger">
+                  Видалити (Danger)
+                </button>
+                <button type="button" class="btn btn-primary" disabled>
+                  Неактивна (Disabled)
+                </button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="label" class="card">
+          <div class="card-header">
+            <span class="badge">06</span>
+            <h2>Text label (Текстова мітка)</h2>
+          </div>
+          <div class="card-body">
+            <div class="explanation">
+              <h3>Призначення:</h3>
+              <p>
+                Елемент <code>&lt;label&gt;</code> представляє
+                <strong
+                  >пояснювальний підпис або назву для елемента
+                  інтерфейсу</strong
+                >
+                (поля введення, чекбоксу, радіокнопки чи списку).
+              </p>
+              <ul>
+                <li>
+                  <strong>Коли використовувати:</strong> завжди поруч з кожним
+                  елементом введення для зрозумілості та доступності
+                  (accessibility).
+                </li>
+                <li>
+                  <strong>Особливість:</strong> зв'язується з інпутом через
+                  атрибут <code>for="id_елемента"</code>. При кліку на мітку
+                  фокус автоматично переходить на відповідне поле введення, що
+                  суттєво полегшує взаємодію на мобільних пристроях.
+                </li>
+              </ul>
+            </div>
+            <div class="demo-box">
+              <span class="demo-label">Приклад:</span>
+              <div class="demo-form-vertical">
+                <div class="form-field">
+                  <label for="interactive-label-input" class="highlight-label">
+                    Клікніть прямо по цьому тексту мітки (Label) &rarr;
+                  </label>
+                  <input
+                    type="text"
+                    id="interactive-label-input"
+                    class="text-field"
+                    placeholder="Поле автоматично отримає фокус"
+                  />
+                </div>
+                <p class="field-hint">
+                  Клік по назві поля активує інпут завдяки атрибуту
+                  <code>for="interactive-label-input"</code>.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="link" class="card">
+          <div class="card-header">
+            <span class="badge">07</span>
+            <h2>Link (Гіперпосилання)</h2>
+          </div>
+          <div class="card-body">
+            <div class="explanation">
+              <h3>Призначення:</h3>
+              <p>
+                Гіперпосилання (тег <code>&lt;a&gt;</code>) слугує для
+                <strong>навігації</strong> між сторінками вебсайту, переходу на
+                зовнішні ресурси, завантаження файлів або переміщення до
+                конкретних розділів (якорів) поточної сторінки.
+              </p>
+              <ul>
+                <li>
+                  <strong>Коли використовувати:</strong> коли дія веде до зміни
+                  URL, переходу на інший екран або зовнішній ресурс (на відміну
+                  від кнопки, яка виконує дію на місці).
+                </li>
+                <li>
+                  <strong>Особливість:</strong> основний атрибут —
+                  <code>href</code>. Для зовнішніх посилань рекомендовано
+                  додавати
+                  <code>target="_blank" rel="noopener noreferrer"</code>.
+                </li>
+              </ul>
+            </div>
+            <div class="demo-box">
+              <span class="demo-label">Приклад:</span>
+              <div class="links-demo">
+                <p>
+                  Звичайне текстове посилання:
+                  <a
+                    href="https://uk.wikipedia.org"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="link-standard"
+                  >
+                    Перейти до Вікіпедії &nearr;
+                  </a>
+                </p>
+                <p>
+                  Внутрішнє якірне посилання:
+                  <a href="#datagrid" class="link-anchor">
+                    Спуститися до елемента 10. Data grid &darr;
+                  </a>
+                </p>
+                <p>
+                  Посилання, оформлене як кнопка-дія:
+                  <a href="#header" class="btn-link"
+                    >Повернутися нагору &uarr;</a
+                  >
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="tooltip" class="card">
+          <div class="card-header">
+            <span class="badge">08</span>
+            <h2>Tooltip (Спливаюча підказка)</h2>
+          </div>
+          <div class="card-body">
+            <div class="explanation">
+              <h3>Призначення:</h3>
+              <p>
+                Спливаюча підказка відображає
+                <strong>коротку допоміжну або контекстну інформацію</strong>,
+                коли користувач наводить курсор миші (hover) або переводить
+                клавіатурний фокус на відповідний елемент.
+              </p>
+              <ul>
+                <li>
+                  <strong>Коли використовувати:</strong> для пояснення іконок
+                  без тексту, складних термінів, правил заповнення пароля чи
+                  скорочень.
+                </li>
+                <li>
+                  <strong>Особливість:</strong> не перевантажує основний простір
+                  сторінки і з'являється лише за потреби користувача.
+                </li>
+              </ul>
+            </div>
+            <div class="demo-box">
+              <span class="demo-label"
+                >Приклад (наведіть курсор миші або натисніть Tab):</span
+              >
+              <div class="tooltips-demo">
+                <button
+                  type="button"
+                  class="btn btn-secondary tooltip-trigger"
+                  data-tooltip="Натисніть для оновлення поточної сторінки"
+                >
+                  Оновити дані
+                </button>
+
+                <span
+                  class="tooltip-text-trigger"
+                  tabindex="0"
+                  data-tooltip="КПІ ім. Ігоря Сікорського"
+                >
+                  Термін з підказкою: КПІ (?)
+                </span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="dropdown" class="card">
+          <div class="card-header">
+            <span class="badge">09</span>
+            <h2>Dropdown list (Випадаючий список / Select)</h2>
+          </div>
+          <div class="card-body">
+            <div class="explanation">
+              <h3>Призначення:</h3>
+              <p>
+                Випадаючий список (тег <code>&lt;select&gt;</code>) дозволяє
+                користувачеві
+                <strong>обрати один варіант із компактного переліку</strong>,
+                який у згорнутому стані займає лише один рядок.
+              </p>
+              <ul>
+                <li>
+                  <strong>Коли використовувати:</strong> коли кількість
+                  варіантів більше 5-7 (наприклад: вибір країни, міста, місяця
+                  народження, мови інтерфейсу), коли радіокнопки зайняли б
+                  занадто багато місця.
+                </li>
+                <li>
+                  <strong>Особливість:</strong> кожен варіант задається тегом
+                  <code>&lt;option&gt;</code>, а атрибут
+                  <code>selected</code> задає варіант за замовчуванням.
+                </li>
+              </ul>
+            </div>
+            <div class="demo-box">
+              <span class="demo-label">Приклад:</span>
+              <div class="demo-form-vertical">
+                <div class="form-field">
+                  <label for="city-select">Оберіть місто навчання:</label>
+                  <select id="city-select" class="dropdown-select">
+                    <option value="" disabled selected>
+                      -- Будь ласка, оберіть місто --
+                    </option>
+                    <option value="kyiv">Київ</option>
+                    <option value="lviv">Львів</option>
+                    <option value="kharkiv">Харків</option>
+                    <option value="dnipro">Дніпро</option>
+                    <option value="odesa">Одеса</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="datagrid" class="card">
+          <div class="card-header">
+            <span class="badge">10</span>
+            <h2>Data grid (Таблиця / Таблиця даних)</h2>
+          </div>
+          <div class="card-body">
+            <div class="explanation">
+              <h3>Призначення:</h3>
+              <p>
+                Таблиця даних слугує для
+                <strong
+                  >структурованого відображення великих обсягів однотипної
+                  інформації</strong
+                >
+                у вигляді рядків та стовпців для зручного візуального
+                порівняння, аналізу та сприйняття.
+              </p>
+              <ul>
+                <li>
+                  <strong>Коли використовувати:</strong> для перегляду списків
+                  замовлень, баз користувачів, прайс-листів, розкладів занять,
+                  фінансових звітів.
+                </li>
+                <li>
+                  <strong>Особливість:</strong> містить заголовки
+                  (<code>&lt;th&gt;</code>), рядки даних
+                  (<code>&lt;tr&gt;</code>, <code>&lt;td&gt;</code>),
+                  використовує підсвічування парних рядків («зебра») та ефект
+                  наведення для зручності читання.
+                </li>
+              </ul>
+            </div>
+            <div class="demo-box">
+              <span class="demo-label">Приклад:</span>
+              <div class="table-responsive">
+                <table class="data-grid">
+                  <thead>
+                    <tr>
+                      <th>№</th>
+                      <th>Елемент UI</th>
+                      <th>Основна роль</th>
+                      <th>Кількість виборів</th>
+                      <th>Статус</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>1</td>
+                      <td><strong>Radiobutton</strong></td>
+                      <td>Вибір альтернативи</td>
+                      <td>Лише 1 з N</td>
+                      <td>
+                        <span class="status-badge status-active">Активний</span>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>2</td>
+                      <td><strong>Checkbox</strong></td>
+                      <td>Множинний вибір / перемикач</td>
+                      <td>0, 1 або багато</td>
+                      <td>
+                        <span class="status-badge status-active">Активний</span>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>3</td>
+                      <td><strong>Dropdown list</strong></td>
+                      <td>Компактний вибір зі списку</td>
+                      <td>1 (або декілька)</td>
+                      <td>
+                        <span class="status-badge status-active">Активний</span>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>4</td>
+                      <td><strong>Data grid</strong></td>
+                      <td>Двовимірний масив даних</td>
+                      <td>Огляд / аналіз</td>
+                      <td>
+                        <span class="status-badge status-info">Таблиця</span>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <p>
+          &copy; 2026 Лабораторна робота з курсу комп'ютерних систем та
+          інженерії ПЗ.
+        </p>
+      </div>
+    </footer>
+
+    <script>
+      document.querySelectorAll(".tab-btn").forEach((button) => {
+        button.addEventListener("click", () => {
+          const targetId = button.getAttribute("data-tab");
+          const parentComponent = button.closest(".tabs-component");
+
+          parentComponent
+            .querySelectorAll(".tab-btn")
+            .forEach((btn) => btn.classList.remove("active"));
+          parentComponent
+            .querySelectorAll(".tab-pane")
+            .forEach((pane) => pane.classList.remove("active"));
+
+          button.classList.add("active");
+          const activePane = parentComponent.querySelector("#" + targetId);
+          if (activePane) {
+            activePane.classList.add("active");
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
